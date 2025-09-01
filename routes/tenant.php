@@ -59,9 +59,9 @@ Route::middleware([
 
         Route::resource('tasks', TaskController::class);
 
-        // Para ADMIN
-        Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
-        Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
+        // // Para ADMIN
+        // Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
+        // Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
     });
 
