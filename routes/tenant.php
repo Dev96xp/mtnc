@@ -73,9 +73,9 @@ Route::middleware([
     // y este retorna la direcion completa de la imagen a mostrar
 
 
-    Route::get('/file/{path}', function ($path) {
-        return response()->file(Storage::path($path));
-    })->where('path', '.*')->name('file');
+    // Route::get('/file/{path}', function ($path) {
+    //     return response()->file(Storage::path($path));
+    // })->where('path', '.*')->name('file');
 
 
     require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
