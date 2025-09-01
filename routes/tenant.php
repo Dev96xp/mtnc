@@ -22,6 +22,7 @@ use App\Http\Controllers\Tenancy\UserController;
 |
 */
 
+// TODAS LAS RUTAS PARA LOS TENANTS VAN AQUI ADENTRO
 Route::middleware([
     'web',
     // MASTER CLASS
@@ -33,24 +34,26 @@ Route::middleware([
 ])->group(function () {
 
     // Inquilinos home page
+    // Pantalla principal de los inquilinos
     Route::get('/', function () {
         return view('tenancy.welcome');
     });
 
     Route::view('profile', 'profile')
     ->middleware(['auth'])
-    ->name('x.profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
+    ->name('profilex');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
-    // GRUPO DE RUTAS
+
+    // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
 
-        // Dashborad, tan proto como log-in, entra aqui
+        // Dashborad, tan proto como se realiza el (log-in), entra aqui
         Route::get('dashboard', function () {
             //return view('tenancy.dashboard');     //ORIGINAL
             return view('tenancy.welcome');         // Originalmente mostraba la vista dashboard pero ahora
-            // muestra la vista welcome otra vez, pero con el usuario
-            // autentificado
-        })->name('x.dashboard');  // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
+                                                    // muestra la vista welcome otra vez, pero con el usuario
+                                                    // autentificado (La pagina princial de un tenant)
+        })->name('dashboardx');  // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
 

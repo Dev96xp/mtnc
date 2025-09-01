@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // routes/web.php, api.php or any other central route files you have
+// TODAS LAS RUTAS CENTRALES DEBEN ESTAR DENTRO DE ESTE FOREACH
 
 foreach (config('tenancy.central_domains') as $domain) {
     Route::domain($domain)->group(function () {
