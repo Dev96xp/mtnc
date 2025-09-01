@@ -39,7 +39,7 @@ Route::middleware([
 
     Route::view('profile', 'profile')
     ->middleware(['auth'])
-    ->name('profile');
+    ->name('x.profile');   // Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
     // GRUPO DE RUTAS
     Route::middleware('auth')->group(function () {
