@@ -39,9 +39,6 @@ Route::middleware([
         return view('tenancy.welcome');
     });
 
-    Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profilex');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
