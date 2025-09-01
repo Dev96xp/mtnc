@@ -1,0 +1,83 @@
+<?php
+
+declare(strict_types=1);
+
+use App\Http\Controllers\Tenancy\admin\HomeController;
+use App\Http\Controllers\Tenancy\TaskController;
+use Illuminate\Support\Facades\Route;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Tenancy\UserController;
+
+/*
+|--------------------------------------------------------------------------
+| Tenant Routes;
+|--------------------------------------------------------------------------
+|
+| Here you can register the tenant routes for your application.
+| These routes are loaded by the TenantRouteServiceProvider.
+|
+| Feel free to customize them however you want. Good luck!
+|
+*/
+
+Route::middleware([
+    'web',
+    // MASTER CLASS
+    // a) Este middleware - Se encarga de la conection a la base de datos dependiendo del dominio
+    // del inquilino conque se este trabajando
+    InitializeTenancyByDomain::class,
+    // b) Este middleware - Previeen el ingreso a rutas no autorizadas entre inquilinos y plataforma principal
+    PreventAccessFromCentralDomains::class,
+])->group(function () {
+
+    // Inquilinos home page
+    Route::get('/', function () {
+        return view('tenancy.welcome');
+    });
+
+    Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
+
+    // GRUPO DE RUTAS
+    Route::middleware('auth')->group(function () {
+
+        // Dashborad, tan proto como log-in, entra aqui
+        Route::get('dashboard', function () {
+            //return view('tenancy.dashboard');     //ORIGINAL
+            return view('tenancy.welcome');         // Originalmente mostraba la vista dashboard pero ahora
+            // muestra la vista welcome otra vez, pero con el usuario
+            // autentificado
+        })->name('dashboard');
+
+
+
+        Route::resource('tasks', TaskController::class);
+
+        // Para ADMIN
+        Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
+        Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
+
+    });
+
+
+    // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
+    // Route::middleware('auth')->group(function () {
+    //     Route::get('/admin-t', [HomeController::class, 'index'])->name('adminx-home');
+    // })->name('admin-tenancy');
+
+
+    // Esta ruta se llama 'file', y se le pasa el path del archivo que se quiere descargar
+    // y este retorna la direcion completa de la imagen a mostrar
+
+
+    Route::get('/file/{path}', function ($path) {
+        return response()->file(Storage::path($path));
+    })->where('path', '.*')->name('file');
+
+
+    require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
+
+});

@@ -1,0 +1,2 @@
+Use laravel 11 y livewire 3
+Use: Tenancy for Laravel, https://tenancyforlaravel.com/docs/v3/quickstart
