@@ -40,7 +40,7 @@ Route::middleware([
     });
 
 
-
+/*
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
 
@@ -61,7 +61,7 @@ Route::middleware([
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
     });
-
+*/
 
     // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
     // Route::middleware('auth')->group(function () {
