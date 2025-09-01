@@ -39,7 +39,7 @@ Route::middleware([
 
     Route::view('profile', 'profile')
     ->middleware(['auth'])
-    ->name('x.profile');   // Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
+    ->name('x.profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
     // GRUPO DE RUTAS
     Route::middleware('auth')->group(function () {
@@ -50,7 +50,7 @@ Route::middleware([
             return view('tenancy.welcome');         // Originalmente mostraba la vista dashboard pero ahora
             // muestra la vista welcome otra vez, pero con el usuario
             // autentificado
-        })->name('dashboard');
+        })->name('x.dashboard');  // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
 
