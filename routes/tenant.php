@@ -39,8 +39,11 @@ Route::middleware([
         return view('tenancy.welcome');
     });
 
+    Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profilex');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
-/*
+
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
 
@@ -61,7 +64,7 @@ Route::middleware([
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
     });
-*/
+
 
     // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
     // Route::middleware('auth')->group(function () {
@@ -73,9 +76,9 @@ Route::middleware([
     // y este retorna la direcion completa de la imagen a mostrar
 
 
-    // Route::get('/file/{path}', function ($path) {
-    //     return response()->file(Storage::path($path));
-    // })->where('path', '.*')->name('file');
+    Route::get('/file/{path}', function ($path) {
+        return response()->file(Storage::path($path));
+    })->where('path', '.*')->name('file');
 
 
     require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
