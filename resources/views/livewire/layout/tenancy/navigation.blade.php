@@ -20,9 +20,9 @@ new class extends Component {
 @php
     $links = [
         [
-            'name' => 'Dashboard',
-            'url' => route('dashboard'),
-            'active' => request()->routeIs('dashboard'),
+            'name' => 'T - Dashboard',
+            'url' => route('t-dashboard'),
+            'active' => request()->routeIs('t-dashboard'),
         ],
         [
             'name' => 'Tasks',

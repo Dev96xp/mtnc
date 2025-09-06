@@ -33,35 +33,37 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
 
-    // Inquilinos home page
+    // TENANT - HOME PAGE
     // Pantalla principal de los inquilinos
     Route::get('/', function () {
         return view('tenancy.welcome');
     });
 
+    // TENANT - PROFILE
     Route::view('profile', 'profile')
     ->middleware(['auth'])
-    ->name('profilex');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
+    ->name('profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
 
-        // Dashborad, tan proto como se realiza el (log-in), entra aqui
+        // TENANT - DASHBOARD
+        // Dashboard, tan proto como se realiza el (log-in), entra aqui
         Route::get('dashboard', function () {
             //return view('tenancy.dashboard');     //ORIGINAL
             return view('tenancy.welcome');         // Originalmente mostraba la vista dashboard pero ahora
                                                     // muestra la vista welcome otra vez, pero con el usuario
                                                     // autentificado (La pagina princial de un tenant)
-        })->name('dashboardx');  // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
+        })->name('t-dashboard');  // OJO - Cambie el nombre de la ruta a t-profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
-
+        // TENANT - TASKS
         Route::resource('tasks', TaskController::class);
 
-        // // Para ADMIN
-        // Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
-        // Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
+        // TENANT - ADMIN
+        Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
+        Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
     });
 
@@ -81,6 +83,8 @@ Route::middleware([
     })->where('path', '.*')->name('file');
 
 
-    require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
+    // Esto me ayuda a tener las rutas de autentificacion del sistema
+    // localizadas en (routes/auth.php)
+    //require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
 
 });

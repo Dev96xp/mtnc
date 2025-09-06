@@ -29,11 +29,13 @@ foreach (config('tenancy.central_domains') as $domain) {
         });
 
 
-            // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
-    Route::middleware('auth')->group(function () {
-        Route::get('/admin', [HomeController::class, 'index'])->name('admin-central');
-    });
+        // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
+        Route::middleware('auth')->group(function () {
+            Route::get('/admin', [HomeController::class, 'index'])->name('admin-central');
+        });
 
+        // Esto me ayuda a tener las rutas de autentificacion del sistema
+        // localizadas en (routes/auth.php)
         require __DIR__ . '/auth.php';
     });
 }
