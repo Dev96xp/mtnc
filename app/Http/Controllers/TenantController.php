@@ -40,16 +40,17 @@ class TenantController extends Controller
         $tenant = Tenant::create($request->all());
 
         // PARA PRODUCCION
+        /*
         $tenant->domains()->create([
             'domain' => $request->get('id') . '.' . 'nucleus-industries.com',
         ]);
-
+*/
         // PARA LOCAL
-        /*
+
         $tenant->domains()->create([
             'domain' => $request->get('id') . '.' . 'mtnc.test',
         ]);
-        */
+
 
         return redirect()->route('tenants.index')
             ->with('success', 'Tenant created successfully.');
@@ -87,16 +88,18 @@ class TenantController extends Controller
         ]);
 
         // PARA PRODUCCION
+        /*
         $tenant->domains()->update([
             'domain' => $request->get('id') . '.' . 'nucleus-industries.com',
         ]);
+        */
 
         // PARA LOCAL
-        /*
+
         $tenant->domains()->update([
             'domain' => $request->get('id') . '.' . 'mtnc.test',
         ]);
-        */
+
 
         return redirect()->route('tenants.index');
     }

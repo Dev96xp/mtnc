@@ -16,9 +16,15 @@ return [
      * The list of domains hosting your central app.
      *
      * Only relevant if you're using the domain or subdomain identification middleware.
+     *
+     * OJO - mtnc.test es el (dominio local),
+     *       nucleus-industries.com es el (dominio de produccion)
      */
+
+
+
     'central_domains' => [
-        'nucleus-industries.com'
+        'mtnc.test'
     ],
 
     /**
