@@ -40,10 +40,11 @@ Route::middleware([
     });
 
     // TENANT - PROFILE
+    /*
     Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('t-profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
-
+*/
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
