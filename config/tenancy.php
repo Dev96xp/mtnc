@@ -22,7 +22,6 @@ return [
      */
 
 
-
     'central_domains' => [
         'nucleus-industries.com'
     ],
