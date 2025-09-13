@@ -20,6 +20,13 @@
     {{-- ALPINE JS --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <script>
+        < link rel = "stylesheet"
+        href = "https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css" >
+    </script>
+
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -29,7 +36,7 @@
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         {{-- <livewire:layout.navigation />       Barra de Navegacion --}}
         {{-- <livewire:layout.tenancy.navigation />      NEW  NO SE USARA Barra de Navegacion para TENANCY --}}
-             <x-tenancy-admin-nav-menu />          {{--  NEW La nueva barra de navegacion para ADMIN TENANCY --}}
+        <x-tenancy-admin-nav-menu /> {{--  NEW La nueva barra de navegacion para ADMIN TENANCY --}}
 
 
         <!-- Page Heading -->
