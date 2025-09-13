@@ -87,6 +87,6 @@ Route::middleware([
     // Esto me ayuda a tener las rutas de autentificacion del sistema
     // localizadas en (routes/auth.php)
 
-    require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
+    //require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
 
 });
