@@ -92,7 +92,7 @@ Route::middleware([
             ->name('t-register');
 
         Volt::route('login', 'pages.auth.login')
-            ->name('login');
+            ->name('t-login');
     });
 
 });
