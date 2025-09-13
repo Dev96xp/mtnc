@@ -11,14 +11,15 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $url = $request->url();
 
-        $user = tenancy()->central(function () {
-           return User::first();
-        });
+        // $user = tenancy()->central(function () {
+        //    return User::first();
+        // });
 
-        $domain_name = "Hola Mundo";
+        $domain_name = $request->url();
 
         return view('tenancy.welcome', compact('domain_name'));
     }
