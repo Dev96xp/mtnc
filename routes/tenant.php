@@ -10,6 +10,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Tenancy\UserController;
 use Livewire\Volt\Volt;
+use App\Http\Controllers\Tenancy\HomeController as TenancyHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +37,11 @@ Route::middleware([
 
     // TENANT - HOME PAGE
     // Pantalla principal de los inquilinos
-    Route::get('/', function () {
-        return view('tenancy.welcome');
-    });
+    // Route::get('/', function () {
+    //     return view('tenancy.welcome');
+    // });
+
+    Route::resource('/', TenancyHomeController::class);   // OJO - con el nombre del controlador es un alias
 
 
     // TENANT - PROFILE
