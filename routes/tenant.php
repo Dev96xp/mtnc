@@ -35,13 +35,14 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
 
+
     // TENANT - HOME PAGE
     // Pantalla principal de los inquilinos
-    // Route::get('/', function () {
+    // Route::get('/', function () {           ANTES
     //     return view('tenancy.welcome');
     // });
+    Route::resource('/', TenancyHomeController::class);   // NUEVO, OJO - con el nombre del controlador es un alias
 
-    Route::resource('/', TenancyHomeController::class);   // OJO - con el nombre del controlador es un alias
 
 
     // TENANT - PROFILE
