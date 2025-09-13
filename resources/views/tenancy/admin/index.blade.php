@@ -1,13 +1,25 @@
 <x-tenancy-admin-layout>
 
-    <div class="text-gray-400 w-full">
-        <h1 class="text-center">QUESO </h1>
-        <h1 class="text-center">QUESO </h1>
-        <h1 class="text-center">QUESO </h1>
-        <h1 class="text-center">QUESO </h1>
-        <h1 class="text-center">QUESO </h1>
+@extends('adminlte::page')
 
-    </div>
+@section('codersfree', 'Dashboard')
+
+@section('content_header')
+    <h1>Tenant Administration Home</h1>
+@stop
+
+@section('content')
+
+
+@stop
+
+@section('css')
+
+@stop
+
+@section('js')
+
+@stop
 
 </x-tenancy-admin-layout>
 
