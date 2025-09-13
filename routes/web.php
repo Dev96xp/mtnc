@@ -36,5 +36,7 @@ foreach (config('tenancy.central_domains') as $domain) {
         // Esto me ayuda a tener las rutas de autentificacion del sistema
         // localizadas en (routes/auth.php)
         require __DIR__ . '/auth.php';
+
+
     });
 }

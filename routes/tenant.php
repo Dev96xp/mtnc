@@ -40,12 +40,13 @@ Route::middleware([
         return view('tenancy.welcome');
     });
 
-    // TENANT - PROFILE
 
+    // TENANT - PROFILE
+    /*
     Route::view('profile', 'profile')
         ->middleware(['auth'])
         ->name('t-profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
-
+*/
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
@@ -66,6 +67,9 @@ Route::middleware([
         // TENANT - ADMIN
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
+
+        Route::view('profile', 'profile')->name('t-profile');
+
     });
 
 
@@ -82,11 +86,9 @@ Route::middleware([
     })->where('path', '.*')->name('file');
 
 
-    // Esto me ayuda a tener las rutas de autentificacion del sistema
+    // Esta rutas las copie de (routes/auth.php), aunque son iguales les di un nombre diferente
+    // para evitar conflictos con las rutas del central, ya que ambas usan el mismo controlador de
     // localizadas en (routes/auth.php)
-
-    //require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
-
     Route::middleware('guest')->group(function () {
         Volt::route('register', 'pages.auth.register')
             ->name('t-register');
@@ -95,4 +97,6 @@ Route::middleware([
             ->name('t-login');
     });
 
+
 });
+
