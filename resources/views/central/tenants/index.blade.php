@@ -38,9 +38,10 @@
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $tenant->id }}
                             </th>
+{{--
                             <td class="px-6 py-4">
                                 {{ $tenant->domains->first()->domain }}
-                            </td>
+                            </td> --}}
 
 
 
