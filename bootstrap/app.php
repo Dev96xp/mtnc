@@ -14,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // health: '/up',
 
 
-        // RUTAS NUEVAS
+        // RUTAS NUEVAS(Para VERSION 11 DE LARAVEL, este es el metodo de tener un control sobre las rutas)
         using: function (Illuminate\Routing\Router $router) {
 
             // $router->middleware('api')                   NO SE USA EN ESTE MOMENTO
@@ -23,6 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
             $router->middleware('web')
                 ->group(base_path('routes/web.php'));
+
 
             // $router->middleware('web')                   NO SE USA EN ESTE MOMENTO
             //     ->name('admin.')    //Las ruta va a comenzar con (admin.)

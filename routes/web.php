@@ -28,7 +28,6 @@ foreach (config('tenancy.central_domains') as $domain) {
             Route::resource('tenants', TenantController::class)->except('show');
         });
 
-
         // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
         Route::middleware('auth')->group(function () {
             Route::get('/admin', [HomeController::class, 'index'])->name('admin-central');
