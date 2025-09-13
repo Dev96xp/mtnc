@@ -12,16 +12,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        tenancy()->central(function ($tenant) {
-            // Code executed in the central context
-            // For example, you can access central models here
-            // $users = \App\Models\User::all();
 
-            $domain_name = $tenant->domains()->domain; // Access tenant domains
+        $domain_name = "Hola Mundo";
 
-            // PAGINA PRINCIPAL DE TENANCY
-            return view('tenancy.welcome', compact('domain_name'));
-        });
+        return view('tenancy.welcome', compact('domain_name'));
     }
 
     /**
