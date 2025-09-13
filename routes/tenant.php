@@ -77,8 +77,6 @@ Route::middleware([
 
     // Esta ruta se llama 'file', y se le pasa el path del archivo que se quiere descargar
     // y este retorna la direcion completa de la imagen a mostrar
-
-
     Route::get('/file/{path}', function ($path) {
         return response()->file(Storage::path($path));
     })->where('path', '.*')->name('file');
@@ -87,6 +85,6 @@ Route::middleware([
     // Esto me ayuda a tener las rutas de autentificacion del sistema
     // localizadas en (routes/auth.php)
 
-    require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
+    //require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
 
 });
