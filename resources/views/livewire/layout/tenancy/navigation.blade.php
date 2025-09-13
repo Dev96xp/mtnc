@@ -100,12 +100,12 @@ new class extends Component {
                         </x-slot>
                     </x-dropdown>
                 @else
-                    <a href="{{ route('login') }}"
+                    <a href="{{ route('t-login') }}"
                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                         Log in
                     </a>
 
-                    <a href="{{ route('register') }}"
+                    <a href="{{ route('t-register') }}"
                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                         Register
                     </a>
@@ -173,11 +173,11 @@ new class extends Component {
             </div>
         @else
             <div class="py-1 border-t border-gray-200">
-                <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('Login')">
+                <x-responsive-nav-link href="{{ route('t-login') }}" :active="request()->routeIs('Login')">
                     Login
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                <x-responsive-nav-link href="{{ route('t-register') }}" :active="request()->routeIs('register')">
                     Register
                 </x-responsive-nav-link>
             </div>
