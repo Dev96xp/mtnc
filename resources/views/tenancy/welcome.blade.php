@@ -12,7 +12,7 @@
                         style="font-family: Jura">
                         <span class="font-bold text-blue-700">Nucleus Industries</span>
                         <div>
-                            <span class="text-4xl font-bold text-blue-500">{{ $domain_name }}</span><span class="text-green-400 font-bold mx-2"> ACTIVE</span>
+                            <span class="text-4xl font-bold text-blue-500 mr-2">{{ $domain_name }}</span><span class="text-green-400 font-bold mx-2"> ACTIVE</span>
                         </div>
 
                     </p>
