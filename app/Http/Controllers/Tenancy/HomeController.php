@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tenancy;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,6 +13,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $user = tenancy()->central(function () {
+           return User::first();
+        });
 
         $domain_name = "Hola Mundo";
 
