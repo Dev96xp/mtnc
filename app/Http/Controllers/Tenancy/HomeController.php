@@ -20,7 +20,7 @@ class HomeController extends Controller
 
         });
         // PAGINA PRINCIPAL DE TENANCY
-        return view('tenancy.welcome','domain_name');
+        return view('tenancy.welcome', compact('domain_name'));
     }
 
     /**
