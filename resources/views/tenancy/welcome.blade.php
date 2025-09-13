@@ -11,6 +11,7 @@
                     <p class="px-2 text-5xl md:text-8xl lg:text-8xl py-6"
                         style="font-family: Jura">
                         <span class="font-bold text-blue-700">Nucleus Industries</span>
+                        <span class="text-4xl font-bold text-blue-500">{{ $url }}</span>
                     </p>
                 </div>
                 <p class="flex justify-end text-white text-xl md:text-3xl lg:text-3xl font-bold"

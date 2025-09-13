@@ -13,7 +13,9 @@ class HomeController extends Controller
     public function index()
     {
         // PAGINA PRINCIPAL DE TENANCY
-        return view('tenancy.welcome');
+        return view('tenancy.welcome', [
+            'url' => env('APP_URL')
+        ]);
     }
 
     /**
