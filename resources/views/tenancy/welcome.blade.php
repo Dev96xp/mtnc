@@ -12,12 +12,12 @@
                         style="font-family: Jura">
                         <span class="font-bold text-blue-700">Nucleus Industries</span>
                         <div>
-                            <span class="text-4xl font-bold text-blue-500 mr-2">{{ $domain_name }}</span><span class="text-green-400 font-bold mx-2"> ACTIVE</span>
+                            <span class="text-2xl lg:text-4xl font-bold text-blue-500 mr-2">{{ $domain_name }}</span><span class="text-green-400 font-bold mx-2"> ACTIVE</span>
                         </div>
 
                     </p>
                 </div>
-                <p class="flex justify-end text-white text-xl md:text-3xl lg:text-3xl font-bold"
+                <p class="flex justify-start lg:justify-end text-white text-xl md:text-3xl lg:text-3xl font-bold"
                     style="font-family: Montserrat">
                     Division Machining / Division Construction
                 </p>
