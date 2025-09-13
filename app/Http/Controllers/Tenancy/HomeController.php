@@ -16,7 +16,7 @@ class HomeController extends Controller
             // Code executed in the central context
             // For example, you can access central models here
             // $users = \App\Models\User::all();
-            $domain_name = $tenant->domains->domain; // Access tenant domains
+            $domain_name = $tenant->domains()->domain; // Access tenant domains
 
         });
         // PAGINA PRINCIPAL DE TENANCY
