@@ -9,6 +9,7 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Tenancy\UserController;
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,8 @@ Route::middleware([
     // TENANT - PROFILE
 
     Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('t-profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
+        ->middleware(['auth'])
+        ->name('t-profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
@@ -54,8 +55,8 @@ Route::middleware([
         Route::get('dashboard', function () {
             //return view('tenancy.dashboard');     //ORIGINAL
             return view('tenancy.welcome');         // Originalmente mostraba la vista dashboard pero ahora
-                                                    // muestra la vista welcome otra vez, pero con el usuario
-                                                    // autentificado (La pagina princial de un tenant)
+            // muestra la vista welcome otra vez, pero con el usuario
+            // autentificado (La pagina princial de un tenant)
         })->name('t-dashboard');  // OJO - Cambie el nombre de la ruta a t-profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
@@ -65,7 +66,6 @@ Route::middleware([
         // TENANT - ADMIN
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
-
     });
 
 
@@ -86,5 +86,13 @@ Route::middleware([
     // localizadas en (routes/auth.php)
 
     //require __DIR__ . '/auth.php';      //Esto incluye las rutas de registro para autentificarnos
+
+    Route::middleware('guest')->group(function () {
+        Volt::route('register', 'pages.auth.register')
+            ->name('t-register');
+
+        Volt::route('login', 'pages.auth.login')
+            ->name('login');
+    });
 
 });
