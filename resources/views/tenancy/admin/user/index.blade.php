@@ -1,20 +1,8 @@
-@extends('adminlte::page')
 
-@section('title', 'Dashboard')
+<x-tenancy-admin-layout>
 
-@section('content_header')
-    <h1>Dashboard Users</h1>
-@stop
+    <div class="text-gray-400 w-full">
+        <h1 class="text-center">Tenant Users Administration </h1>
+    </div>
 
-@section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
-
-@section('css')
-    {{-- Add here extra stylesheets --}}
-    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-@stop
-
-@section('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
-@stop
+</x-tenancy-admin-layout>

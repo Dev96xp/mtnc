@@ -8,8 +8,8 @@
         ],
         [
             'name' => 'Users',
-            'url' => route('tasks.index'),
-            'active' => request()->routeIs('tasks.*'),
+            'url' => route('users.index'),
+            'active' => request()->routeIs('users.*'),
             'icon' => 'fas fa-fw fa-user-cog',
         ],
         [

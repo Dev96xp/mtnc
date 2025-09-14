@@ -68,9 +68,13 @@ Route::middleware([
         // TENANT - TASKS
         Route::resource('tasks', TaskController::class);
 
-        // TENANT - ADMIN
+
+        // TENANT - ######---- ADMIN ------######
+
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
+
+        Route::resource('users', UserController::class);
 
         Route::view('profile', 'profile')->name('t-profile');
 
