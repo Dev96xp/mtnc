@@ -261,7 +261,11 @@ This example requires updating your template:
                                     <a href="{{ $link['route'] }}"
                                         class="group flex gap-x-3 rounded-md bg-gray-800 p-2 text-sm/6 font-semibold text-white">
 
-                                        <i class="{{ $link['icon'] }}"></i>
+
+
+                                        <i class="fa-solid fa-tag"></i>
+
+
 
                                         {{ $link['name'] }}
                                     </a>
