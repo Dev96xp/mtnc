@@ -3,10 +3,10 @@
         [
             'name' => 'Dashboard',
             'url' => route('dashboard'),
-            'active' => request()->routeIs('dashboard'),
+            'active' => request()->routeIs('dashboard.*'),
             'icon' => 'far fa-calendar',
         ],
-                [
+        [
             'name' => 'Business',
             'url' => route('business.index'),
             'active' => request()->routeIs('business.*'),
@@ -15,7 +15,7 @@
         [
             'name' => 'Vanessa',
             'url' => route('dashboard'),
-            'active' => request()->routeIs('dashboard'),
+            'active' => request()->routeIs('dashboard.*'),
             'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
