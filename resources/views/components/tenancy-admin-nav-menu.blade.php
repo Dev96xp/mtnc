@@ -13,6 +13,12 @@
             'icon' => 'far fa-calendar',
         ],
         [
+            'name' => 'Categories',
+            'url' => route('categories.index'),
+            'active' => request()->routeIs('categories.*'),
+            'icon' => 'far fa-calendar',
+        ],
+        [
             'name' => 'Vanessa',
             'url' => route('dashboard'),
             'active' => request()->routeIs('dashboard.*'),
