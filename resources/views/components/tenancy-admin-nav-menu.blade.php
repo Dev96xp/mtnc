@@ -260,13 +260,6 @@ This example requires updating your template:
                                     <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
                                     <a href="{{ $link['route'] }}"
                                         class="group flex gap-x-3 rounded-md bg-gray-800 p-2 text-sm/6 font-semibold text-white">
-
-
-
-                                        <i class="fa-solid fa-tag"></i>
-
-
-
                                         {{ $link['name'] }}
                                     </a>
                                 </li>
