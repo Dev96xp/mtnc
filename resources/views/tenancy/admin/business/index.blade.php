@@ -1,4 +1,3 @@
-
 <x-tenancy-admin-layout>
 
     <div class="text-gray-400 w-full">

@@ -36,10 +36,8 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
 
-
     // TENANT - HOME PAGE
     Route::resource('/', TenancyHomeController::class);   // NUEVO, OJO - con el nombre del controlador es un alias
-
 
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
@@ -63,16 +61,11 @@ Route::middleware([
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
-        Route::get('/business', [BussinessController::class, 'index'])->name('adminx-business');
+        Route::get('/business', [BussinessController::class, 'index'])->name('business');
 
         Route::view('profile', 'profile')->name('t-profile');
     });
 
-
-    // [ADMIN] - GRUPO DE RUTAS PARA - ADMINISTRATOR
-    // Route::middleware('auth')->group(function () {
-    //     Route::get('/admin-t', [HomeController::class, 'index'])->name('adminx-home');
-    // })->name('admin-tenancy');
 
 
     // Esta ruta se llama 'file', y se le pasa el path del archivo que se quiere descargar
