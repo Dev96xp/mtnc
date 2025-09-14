@@ -14,8 +14,8 @@
         ],
         [
             'name' => 'Categories',
-            'url' => route('categories.index'),
-            'active' => request()->routeIs('categories.*'),
+            'url' => route('category.index'),
+            'active' => request()->routeIs('category.*'),
             'icon' => 'far fa-calendar',
         ],
         [

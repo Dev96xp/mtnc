@@ -63,9 +63,8 @@ Route::middleware([
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
         Route::get('/business', [BussinessController::class, 'index'])->name('business');
-        Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+        Route::get('/category', [CategoryController::class, 'index'])->name('category');
 
-        Route::view('profile', 'profile')->name('t-profile');
     });
 
 
