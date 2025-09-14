@@ -1,9 +1,9 @@
 @php
     $links = [
         [
-            'name' => 'Dashboard',
-            'url' => route('dashboard'),
-            'active' => request()->routeIs('dashboard.*'),
+            'name' => 'Home - Dashboard',
+            'url' => route('t-dashboard'),
+            'active' => request()->routeIs('t-dashboard.*'),
             'icon' => 'far fa-calendar',
         ],
         [
@@ -78,6 +78,7 @@ This example requires updating your template:
                 From: "opacity-100"
                 To: "opacity-0"
                 -->
+
                 <div class="absolute top-0 left-full flex w-16 justify-center pt-5">
                     <button x-on:click="openMobileSidebar = ! openMobileSidebar" type="button" class="-m-2.5 p-2.5">
                         <span class="sr-only">Close sidebar</span>
@@ -91,9 +92,14 @@ This example requires updating your template:
                 <!-- Sidebar component, swap this element with another sidebar if you like -->
                 <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
                     <div class="flex h-16 shrink-0 items-center">
-                        <img class="h-8 w-auto"
-                            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                            alt="Your Company">
+
+
+                        <div class="shrink-0 flex items-center">
+                            <a href="{{ route('t-dashboard') }}">
+                                <img class="h-8 w-auto" src="#" alt="Your Company">
+                            </a>
+                        </div>
+
                     </div>
                     <nav class="flex flex-1 flex-col">
                         <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -232,10 +238,13 @@ This example requires updating your template:
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4">
-            <div class="flex h-16 shrink-0 items-center">
-                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company">
+
+            <div class="flex h-16 shrink-0 items-center font-bold text-gray-400">
+                <a href="{{ route('t-dashboard') }}">
+                    <h1>Home</h1>
+                </a>
             </div>
+
             <nav class="flex flex-1 flex-col">
                 <ul role="list" class="flex flex-1 flex-col gap-y-7">
                     <li>
@@ -256,6 +265,7 @@ This example requires updating your template:
                                     </a>
                                 </li>
                             @endforeach
+
                             <!--
                             <li>
                                 <a href="#"
@@ -267,44 +277,6 @@ This example requires updating your template:
                                             d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
                                     </svg>
                                     Projects
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
-                                    <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                        data-slot="icon">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                                    </svg>
-                                    Calendar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
-                                    <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                        data-slot="icon">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
-                                    </svg>
-                                    Documents
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
-                                    <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                        data-slot="icon">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
-                                    </svg>
-                                    Reports
                                 </a>
                             </li>
                             -->

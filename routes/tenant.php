@@ -38,20 +38,9 @@ Route::middleware([
 
 
     // TENANT - HOME PAGE
-    // Pantalla principal de los inquilinos
-    // Route::get('/', function () {           ANTES
-    //     return view('tenancy.welcome');
-    // });
     Route::resource('/', TenancyHomeController::class);   // NUEVO, OJO - con el nombre del controlador es un alias
 
 
-
-    // TENANT - PROFILE
-    /*
-    Route::view('profile', 'profile')
-        ->middleware(['auth'])
-        ->name('t-profile');   // OJO - Cambie el nombre de la ruta a x.profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
-*/
 
     // GRUPO DE RUTAS, DONDE ES NECESARIO HACER LOGIN
     Route::middleware('auth')->group(function () {
@@ -59,10 +48,9 @@ Route::middleware([
         // TENANT - DASHBOARD
         // Dashboard, tan proto como se realiza el (log-in), entra aqui
         Route::get('dashboard', function () {
-            //return view('tenancy.dashboard');     //ORIGINAL
             return view('tenancy.welcome');         // Originalmente mostraba la vista dashboard pero ahora
-            // muestra la vista welcome otra vez, pero con el usuario
-            // autentificado (La pagina princial de un tenant)
+                                                    // muestra la vista welcome otra vez, pero con el usuario
+                                                    // autentificado (La pagina princial de un tenant)
         })->name('t-dashboard');  // OJO - Cambie el nombre de la ruta a t-profile para evitar conflicto con la ruta profile del central, COREJIR EN EL FUTURO
 
 
@@ -78,7 +66,6 @@ Route::middleware([
         Route::resource('business', BussinessController::class);
 
         Route::view('profile', 'profile')->name('t-profile');
-
     });
 
 
@@ -105,7 +92,4 @@ Route::middleware([
         Volt::route('login', 'pages.auth.login')
             ->name('t-login');
     });
-
-
 });
-
