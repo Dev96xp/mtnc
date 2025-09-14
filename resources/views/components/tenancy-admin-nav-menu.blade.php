@@ -13,30 +13,6 @@
             'icon' => 'far fa-calendar',
         ],
         [
-            'name' => 'Users',
-            'url' => route('users.index'),
-            'active' => request()->routeIs('users.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
-        ],
-                [
-            'name' => 'Products',
-            'url' => route('products.index'),
-            'active' => request()->routeIs('products.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
-        ],
-        [
-            'name' => 'Category',
-            'url' => route('categories.index'),
-            'active' => request()->routeIs('categories.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
-        ],
-        [
-            'name' => 'Subcategories',
-            'url' => route('subcategories.index'),
-            'active' => request()->routeIs('subcategories.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
-        ],
-        [
             'name' => 'Vanessa',
             'url' => route('dashboard'),
             'active' => request()->routeIs('dashboard'),

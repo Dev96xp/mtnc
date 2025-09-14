@@ -75,8 +75,6 @@ Route::middleware([
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
-        Route::resource('users', UserController::class);
-        Route::resource('products', HomeController::class);
         Route::resource('business', BussinessController::class);
 
         Route::view('profile', 'profile')->name('t-profile');
