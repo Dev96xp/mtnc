@@ -8,13 +8,13 @@
         ],
         [
             'name' => 'Business',
-            'url' => route('business.index'),
+            'url' => route('business'),
             'active' => request()->routeIs('business.*'),
             'icon' => 'far fa-calendar',
         ],
         [
             'name' => 'Categories',
-            'url' => route('category.index'),
+            'url' => route('category'),
             'active' => request()->routeIs('category.*'),
             'icon' => 'far fa-calendar',
         ],

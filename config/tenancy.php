@@ -23,8 +23,8 @@ return [
 
 
     'central_domains' => [
-        //'mtnc.test'
-        'nucleus-industries.com'
+        'mtnc.test'
+        //'nucleus-industries.com'
     ],
 
     /**
