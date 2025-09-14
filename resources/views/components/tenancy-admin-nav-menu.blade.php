@@ -8,7 +8,7 @@
         ],
         [
             'name' => 'Business',
-            'url' => route('business'),
+            'url' => route('business.index'),
             'active' => request()->routeIs('business.*'),
             'icon' => 'far fa-calendar',
         ],
