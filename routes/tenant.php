@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Tenancy\Admin\BussinessController;
 use App\Http\Controllers\Tenancy\admin\HomeController;
 use App\Http\Controllers\Tenancy\TaskController;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,8 @@ Route::middleware([
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
         Route::resource('users', UserController::class);
+        Route::resource('products', HomeController::class);
+        Route::resource('business', BussinessController::class);
 
         Route::view('profile', 'profile')->name('t-profile');
 
