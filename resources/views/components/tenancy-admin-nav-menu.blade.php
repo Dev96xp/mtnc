@@ -4,37 +4,31 @@
             'name' => 'Dashboard',
             'url' => route('dashboard'),
             'active' => request()->routeIs('dashboard'),
-            'icon' => 'far fa-calendar',
         ],
         [
             'name' => 'Users',
             'url' => route('tasks.index'),
             'active' => request()->routeIs('tasks.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
             'name' => 'Category',
             'url' => route('dashboard'),
             'active' => request()->routeIs('dashboard'),
-            'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
             'name' => 'Subcategories',
             'url' => route('tasks.index'),
             'active' => request()->routeIs('tasks.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
             'name' => 'Vanessa',
             'url' => route('dashboard'),
             'active' => request()->routeIs('dashboard'),
-            'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
             'name' => 'Rocio',
             'url' => route('tasks.index'),
             'active' => request()->routeIs('tasks.*'),
-            'icon' => 'fas fa-fw fa-user-cog',
         ],
     ];
 @endphp
