@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Tenancy\Admin\BrandController;
 use App\Http\Controllers\Tenancy\Admin\BussinessController;
 use App\Http\Controllers\Tenancy\Admin\CategoryController;
 use App\Http\Controllers\Tenancy\admin\HomeController;
@@ -64,6 +65,9 @@ Route::middleware([
 
         Route::get('/business', [BussinessController::class, 'index'])->name('business');
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
+
+        Route::get('/brand', [BrandController::class, 'index'])->name('brand');
+
 
         Route::view('profile', 'profile')->name('t-profile');
     });

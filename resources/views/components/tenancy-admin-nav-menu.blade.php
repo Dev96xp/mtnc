@@ -18,6 +18,12 @@
             'active' => request()->routeIs('category.*'),
             'icon' => 'far fa-calendar',
         ],
+                [
+            'name' => 'Brands',
+            'url' => route('brand'),
+            'active' => request()->routeIs('brand.*'),
+            'icon' => 'far fa-calendar',
+        ],
         [
             'name' => 'Vanessa',
             'url' => route('dashboard'),

@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    return view('tenancy.admin.brands.index');
+    public function index()
+    {
+        return view('tenancy.admin.brand.index');
+    }
 }
