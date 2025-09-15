@@ -12,7 +12,30 @@
             'active' => request()->routeIs('business.*'),
             'icon' => 'far fa-calendar',
         ],
-
+        [
+            'name' => 'Categories',
+            'url' => route('category'),
+            'active' => request()->routeIs('category.*'),
+            'icon' => 'far fa-calendar',
+        ],
+        [
+            'name' => 'Brands',
+            'url' => route('brand'),
+            'active' => request()->routeIs('brand.*'),
+            'icon' => 'far fa-calendar',
+        ],
+        [
+            'name' => 'Vanessa',
+            'url' => route('dashboard'),
+            'active' => request()->routeIs('dashboard.*'),
+            'icon' => 'fas fa-fw fa-user-cog',
+        ],
+        [
+            'name' => 'Rocio',
+            'url' => route('tasks.index'),
+            'active' => request()->routeIs('tasks.*'),
+            'icon' => 'fas fa-fw fa-user-cog',
+        ],
     ];
 @endphp
 
