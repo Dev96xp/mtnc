@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Business extends Model
+class Brand extends Model
 {
     //Asignacion masiva
     protected $guarded = ['id'];
