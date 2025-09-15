@@ -64,7 +64,6 @@ Route::middleware([
 
         Route::get('/business', [BussinessController::class, 'index'])->name('business');
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
-
         Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 
 
