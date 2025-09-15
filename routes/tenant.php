@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Tenancy\UserController;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\Tenancy\HomeController as TenancyHomeController;
 
@@ -63,10 +62,10 @@ Route::middleware([
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
-        Route::get('business', [BussinessController::class, 'index'])->name('business');
+        Route::get('/business', [BussinessController::class, 'index'])->name('business');
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
 
-        Route::get('brand', [BrandController::class, 'index'])->name('brand');
+        Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 
 
         Route::view('profile', 'profile')->name('t-profile');
