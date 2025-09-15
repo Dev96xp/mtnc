@@ -3,37 +3,31 @@
         [
             'name' => 'Home - Dashboard',
             'url' => route('t-dashboard'),
-            'active' => request()->routeIs('t-dashboard.*'),
             'icon' => 'far fa-calendar',
         ],
         [
             'name' => 'Business',
-            'url' => route('business'),
-            'active' => request()->routeIs('business.*'),
+            'url' => route('business.index'),
             'icon' => 'far fa-calendar',
         ],
         [
             'name' => 'Categories',
             'url' => route('category'),
-            'active' => request()->routeIs('category.*'),
             'icon' => 'far fa-calendar',
         ],
         [
             'name' => 'Brands',
             'url' => route('brand'),
-            'active' => request()->routeIs('brand.*'),
             'icon' => 'far fa-calendar',
         ],
         [
             'name' => 'Vanessa',
             'url' => route('dashboard'),
-            'active' => request()->routeIs('dashboard.*'),
             'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
             'name' => 'Rocio',
             'url' => route('tasks.index'),
-            'active' => request()->routeIs('tasks.*'),
             'icon' => 'fas fa-fw fa-user-cog',
         ],
     ];
