@@ -66,7 +66,7 @@ Route::middleware([
         Route::get('business', [BussinessController::class, 'index'])->name('business');
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
 
-        Route::get('/brand', [BrandController::class, 'index'])->name('brands');
+        Route::get('brand', [BrandController::class, 'index'])->name('brand');
 
 
         Route::view('profile', 'profile')->name('t-profile');
