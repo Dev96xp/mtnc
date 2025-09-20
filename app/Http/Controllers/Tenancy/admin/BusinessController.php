@@ -12,8 +12,8 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        dd('Hola desde BusinessController');
-        //return view('tenancy.admin.business.index');
+
+        return view('tenancy.admin.business.index');
     }
 
     /**

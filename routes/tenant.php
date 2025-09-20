@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Tenancy\admin\BrandController;
-
 use App\Http\Controllers\Tenancy\admin\CategoryController;
 use App\Http\Controllers\Tenancy\admin\HomeController;
 use App\Http\Controllers\Tenancy\TaskController;
@@ -56,6 +55,7 @@ Route::middleware([
 
         // TENANT - TASKS
         Route::resource('tasks', TaskController::class);
+
 
 
         // TENANT - ######---- ADMIN ------######
