@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Tenancy\Admin\BrandController;
+use App\Http\Controllers\Tenancy\admin\BrandController;
 
-use App\Http\Controllers\Tenancy\Admin\CategoryController;
+use App\Http\Controllers\Tenancy\admin\CategoryController;
 use App\Http\Controllers\Tenancy\admin\HomeController;
 use App\Http\Controllers\Tenancy\TaskController;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +13,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\Tenancy\HomeController as TenancyHomeController;
-use App\Http\Controllers\Tenancy\Admin\BusinessController;
+use App\Http\Controllers\Tenancy\admin\BusinessController;
 
 /*
 |--------------------------------------------------------------------------
