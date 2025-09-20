@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tenancy\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class BusinessController extends Controller
@@ -12,7 +13,8 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        return view('tenancy.admin.business.index');
+        $tasks = Task::paginate();
+        return view('tenancy.tasks.index', compact('tasks'));
     }
 
     /**
