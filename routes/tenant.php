@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Tenancy\Admin\BrandController;
-use App\Http\Controllers\Tenancy\Admin\BussinessController;
+
 use App\Http\Controllers\Tenancy\Admin\CategoryController;
 use App\Http\Controllers\Tenancy\admin\HomeController;
 use App\Http\Controllers\Tenancy\TaskController;
@@ -13,6 +13,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\Tenancy\HomeController as TenancyHomeController;
+use App\Http\Controllers\Tenancy\Admin\BusinessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +62,7 @@ Route::middleware([
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
-        Route::resource('business', BussinessController::class);
+        Route::resource('business', BusinessController::class);
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
         Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 

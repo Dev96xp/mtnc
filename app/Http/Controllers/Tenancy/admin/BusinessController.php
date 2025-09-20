@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Tenancy\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Business;
 
-class BussinessController extends Controller
+class BusinessController extends Controller
 {
     /**
      * Display a listing of the resource.
