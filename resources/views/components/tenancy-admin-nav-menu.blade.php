@@ -22,7 +22,7 @@
         ],
         [
             'name' => 'Vanessa',
-            'url' => route('dashboard'),
+            'url' => route('t-dashboard'),
             'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
