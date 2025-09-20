@@ -61,7 +61,7 @@ Route::middleware([
         Route::get('/tadmin', [HomeController::class, 'index'])->name('adminx-home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('adminx-logout');
 
-        Route::resource('business', [BussinessController::class]);
+        Route::resource('business', BussinessController::class);
         Route::get('/category', [CategoryController::class, 'index'])->name('category');
         Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 
